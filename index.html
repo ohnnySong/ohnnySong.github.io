@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>超声波设备领域 · 目标公司舆情看板</title>
+<style>
+:root{
+ --bg:#f7f8fa;--card:#fff;--text:#1a1a1a;--muted:#5f6368;--border:#e5e7eb;
+ --accent:#1a73e8;--accent-bg:#e8f0fe;--pos:#d93025;--pos-bg:#fce8e6;
+ --neg:#137333;--neg-bg:#e6f4ea;--neu:#5f6368;--neu-bg:#f1f3f4;
+ --gold-tx:#b06000;--gold-bg:#fff8e1;--thead:#f8f9fa;
+ font-family:var(--kimi-font-sans,"PingFang SC","Microsoft YaHei",sans-serif);
+ color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);
+ font-family:var(--kimi-font-sans,"PingFang SC","Microsoft YaHei",sans-serif);
+ font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+button,input{font:inherit}
+#app{display:flex;flex-direction:column;min-height:100vh;background:var(--bg);max-width:1100px;margin:0 auto}
+
+/* hero */
+.hero{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:16px 18px 13px;flex:none}
+.hero h1{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:.3px}
+.hero .sub{opacity:.85;font-size:11.5px}
+.hero .tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.hero .tag{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:1px 10px;font-size:11px}
+
+/* tabs */
+.tabs{flex:none;display:flex;gap:2px;background:#fff;border-bottom:1px solid var(--border);padding:0 12px}
+.tabs button{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);
+ font-size:13px;padding:9px 14px;cursor:pointer}
+.tabs button.on{color:var(--text);border-bottom-color:var(--text);font-weight:600}
+.tabs button:hover{color:var(--text)}
+.tabs .sp{flex:1}
+.tabs .st{font-size:11px;color:var(--muted);align-self:center}
+
+/* pages */
+.page{flex:1;padding:14px 16px 24px;display:none}
+.page.on{display:block}
+
+/* badges */
+.b{display:inline-block;font-size:11px;padding:1px 8px;border-radius:4px;font-weight:600;line-height:1.7}
+.b-pos{background:var(--pos-bg);color:var(--pos)}
+.b-neg{background:var(--neg-bg);color:var(--neg)}
+.b-neu{background:var(--neu-bg);color:var(--neu)}
+.b-tier-A{background:var(--pos-bg);color:var(--pos)}
+.b-tier-B{background:var(--gold-bg);color:var(--gold-tx)}
+.b-tier-C{background:var(--neu-bg);color:var(--neu)}
+
+/* filter bar */
+.fbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;align-items:center}
+.chip{border:1px solid var(--border);background:#fff;border-radius:20px;padding:2px 11px;
+ font-size:12px;color:var(--muted);cursor:pointer}
+.chip.on{background:var(--text);color:#fff;border-color:var(--text)}
+.chip:hover{border-color:var(--muted)}
+.fbar .sep{width:1px;height:16px;background:var(--border);margin:0 4px}
+
+/* kv */
+.kvrow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.kv{background:#fff;border:1px solid var(--border);border-radius:8px;padding:9px 12px}
+.kv .k{font-size:11px;color:var(--muted)}
+.kv .v{font-size:18px;font-weight:600;margin:1px 0;font-variant-numeric:tabular-nums}
+.kv .v.pos{color:var(--pos)} .kv .v.neg{color:var(--neg)}
+.kv .d{font-size:10.5px;color:var(--muted)}
+
+/* news card */
+.news{background:#fff;border:1px solid var(--border);border-radius:9px;padding:12px 15px;margin-bottom:10px}
+.news .h{font-weight:600;font-size:13.5px;margin-bottom:5px;display:flex;gap:8px;align-items:flex-start}
+.news .h a{color:var(--text);text-decoration:none;flex:1}
+.news .h a:hover{color:var(--accent);text-decoration:underline}
+.news dl{margin:6px 0 0;display:grid;grid-template-columns:66px 1fr;gap:3px 10px;font-size:12.5px}
+.news dt{color:var(--muted);font-size:11.5px}
+.news dd{margin:0}
+.news .co-tag{background:var(--accent-bg);color:#1a56a0;border-radius:4px;font-size:11px;
+ padding:0 7px;flex:none;font-weight:600;line-height:1.9}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.empty{color:var(--muted);text-align:center;padding:40px 0;font-size:13px}
+.small{font-size:11.5px;color:var(--muted)}
+
+/* profile */
+.tier-block{margin-bottom:16px}
+.tier-head{font-size:13px;font-weight:700;padding:5px 12px;border-radius:6px;margin-bottom:8px;color:#fff}
+.tier-head.tier-A{background:#b06000}.tier-head.tier-B{background:#1a56a0}.tier-head.tier-C{background:#5f6368}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.co-card{background:#fff;border:1px solid var(--border);border-radius:9px;padding:12px 14px}
+.co-head{display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.co-name{font-weight:700;font-size:14px;flex:1}
+.co-ctry{font-size:11px;color:var(--muted)}
+.co-cat{font-size:11px;color:#1a56a0;margin-bottom:6px}
+.co-dl{margin:0;display:grid;grid-template-columns:60px 1fr;gap:4px 10px;font-size:12px}
+.co-dl dt{color:var(--muted);font-size:11.5px}
+.co-dl dd{margin:0}
+@media (max-width:640px){.co-grid{grid-template-columns:1fr}.kvrow{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div id="app">
+ <div class="hero">
+  <h1>超声波设备领域 · 目标公司舆情看板</h1>
+  <div class="sub" id="sub">29 家短名单公司 · 每日更新 · 数据加载中…</div>
+  <div class="tags" id="heroTags"></div>
+ </div>
+ <div class="tabs">
+  <button id="tabBtnNews" class="on" type="button">舆情看板</button>
+  <button id="tabBtnProfile" type="button">公司简介</button>
+  <span class="sp"></span>
+  <span class="st" id="statusText"></span>
+ </div>
+
+ <div class="page on" id="pageNews">
+  <div class="fbar" id="tierFilter">
+   <button class="chip on" data-tier="" type="button">全部</button>
+   <button class="chip" data-tier="A" type="button">A 级</button>
+   <button class="chip" data-tier="B" type="button">B 级</button>
+   <button class="chip" data-tier="C" type="button">C 级</button>
+   <span class="sep"></span>
+   <button class="chip on" data-sent="" type="button">全部情绪</button>
+   <button class="chip" data-sent="positive" type="button">正面</button>
+   <button class="chip" data-sent="negative" type="button">负面</button>
+   <button class="chip" data-sent="neutral" type="button">中性</button>
+  </div>
+  <div class="kvrow" id="kvRow"></div>
+  <div id="newsList"></div>
+ </div>
+
+ <div class="page" id="pageProfile">
+<div class="tier-block"><div class="tier-head tier-A">A 级 · 重点标的</div><div class="co-grid">
+<div class="co-card" data-name="Fuji Ceramics">
+<div class="co-head"><span class="co-name">Fuji Ceramics</span><span class="co-ctry">日本</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">15 压电材料</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>基于自研压电陶瓷打造的高灵敏空气超声传感器（约40 kHz–400 kHz）、高功率朗之文换能器及雾化与微驱动器件，实现从高频非接触检测到工业超声清洗与精密振动执行的多场景应用</dd>
+<dt>财务情况</dt><dd>总营收：3.56亿美元</dd>
+<dt>市场渠道</dt><dd>日本海外销售部负责全球销售和售后；
+欧洲设有分销代理</dd>
+<dt>公司背景</dt><dd>个人企业；
+无收并购记录</dd>
+<dt>官网</dt><dd><a href="https://www.fujicera.co.jp/en/" target="_blank" rel="noopener">https://www.fujicera.co.jp/en/</a></dd>
+</dl></div>
+<div class="co-card" data-name="Insight K.K.">
+<div class="co-head"><span class="co-name">Insight K.K.</span><span class="co-ctry">日本</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">3 超声波无损检测成像、6 超声波工业检测设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>支持1 MHz–500 MHz超声频率范围与多轴高分辨扫描，可实现空洞、脱层、裂纹及封装缺陷成像的超声波 C-SCAN 图像诊断装置；覆盖0.5 MHz–250 MHz，可提供接触式、水浸式、高温型及微型探头等规格的超声波探触子</dd>
+<dt>财务情况</dt><dd>EBITDA：308.5万美元</dd>
+<dt>市场渠道</dt><dd>美国设有办事处；
+亚洲、欧洲设有分销代理</dd>
+<dt>公司背景</dt><dd>个人企业；
+无收并购记录</dd>
+<dt>官网</dt><dd><a href="https://insightkk.xsrv.jp" target="_blank" rel="noopener">insightkk.xsrv.jp</a></dd>
+</dl></div>
+<div class="co-card" data-name="JAPAN PROBE">
+<div class="co-head"><span class="co-name">JAPAN PROBE</span><span class="co-ctry">日本</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">3 超声波无损检测成像、6 工业超声波检测设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>核心技术聚焦于非接触式空气耦合超声检测、定制化探头设计以及高性能电子信号链整合。其系统无需耦合剂即可实现高分辨率无损检测，配合自研探头可覆盖从常规工业到深海及高频科研应用；公司还通过自主研发的高信噪比脉冲接收器实现宽带精密信号处理，并提供委托测试与研究服务，为客户在研发和质量控制中提供全面的超声评估支持</dd>
+<dt>财务情况</dt><dd>未披露</dd>
+<dt>市场渠道</dt><dd>在中国设有办事处；
+在欧洲、亚洲、北美设有分销渠道</dd>
+<dt>公司背景</dt><dd>私人企业；
+无收并购记录</dd>
+<dt>官网</dt><dd><a href="https://www.jp-probe.com" target="_blank" rel="noopener">www.jp-probe.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Tokyo Instruments">
+<div class="co-head"><span class="co-name">Tokyo Instruments</span><span class="co-ctry">日本</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">2 超声波扫描显微镜</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>支持50–2000 MHz高频换能器，在100–400 MHz区间实现超高分辨率（约4.5 µm横向 / 1.9 µm纵向）的超声波显微系统</dd>
+<dt>财务情况</dt><dd>营收：840万美元</dd>
+<dt>市场渠道</dt><dd>韩国、美国设有子公司；德国设有合资公司，并整合了其各自在中国的子公司辐射中国及欧洲市场</dd>
+<dt>公司背景</dt><dd>个人企业；
+2008年左右收购Unisoku公司</dd>
+<dt>官网</dt><dd><a href="https://tokyoinst.co.jp" target="_blank" rel="noopener">tokyoinst.co.jp</a></dd>
+</dl></div>
+<div class="co-card" data-name="Ueda Japan Radio">
+<div class="co-head"><span class="co-name">Ueda Japan Radio</span><span class="co-ctry">日本</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">15 压电材料</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>在医疗超声领域专注于高性能医疗换能器和探头的自主研发，凭借自产低声阻抗、低机械Q值的压电陶瓷材料，开发出包括相控阵、线阵、凸阵和微凸阵在内的多类型探头，实现高灵敏度、宽带宽和高分辨率成像，广泛用于心脏、腹部、浅表及内窥镜诊断，并具备定制化设计能力</dd>
+<dt>财务情况</dt><dd>营收：7,413万美元<br>净利润：92万美元</dd>
+<dt>市场渠道</dt><dd>在亚洲、北美、欧洲设有分销渠道</dd>
+<dt>公司背景</dt><dd>全资子公司；
+2016年被日本無線株式会社（JRC）收购
+ 2017年JRC被日清纺集团收购</dd>
+<dt>官网</dt><dd><a href="https://www.ujrc.co.jp" target="_blank" rel="noopener">https://www.ujrc.co.jp</a></dd>
+</dl></div>
+<div class="co-card" data-name="Ultex">
+<div class="co-head"><span class="co-name">Ultex</span><span class="co-ctry">日本</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">1 超声波焊接设备、9 超声波切割设备、14 超声波清洗设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>钢铁、半导体、电池等领域的焊接、切割和清洗</dd>
+<dt>财务情况</dt><dd>未披露</dd>
+<dt>市场渠道</dt><dd>在美国有唯一分销渠道商负责北美市场</dd>
+<dt>公司背景</dt><dd>个人企业；
+无收并购经历</dd>
+<dt>官网</dt><dd><a href="https://ultex.co.jp" target="_blank" rel="noopener">ultex.co.jp</a></dd>
+</dl></div>
+<div class="co-card" data-name="honda-el">
+<div class="co-head"><span class="co-name">honda-el</span><span class="co-ctry">日本</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">13 超声波传感器、14 超声清洗设备、15 压电材料</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>超声波技术体系涵盖焊接、清洗、检测、切割、传感及压电材料六大核心产品方向。公司技术优势在于自制压电陶瓷与换能器，实现从低频功率超声到高频成像的全频段覆盖。其超声波焊接与切割设备通过高频振动能量实现材料快速连接与精密加工，广泛用于塑料、薄膜与电子制造领域；超声波清洗设备支持多频振荡与模块化设计，用于半导体及精密电子清洗；超声波检测设备与成像系统结合50 kHz至140 MHz的宽频带信号，实现工业液体监控及材料无损成像；传感器与压电陶瓷产品则构成所有设备的基础核心，为海洋探测、医疗成像及工业测控提供高灵敏度声学信号转换能力</dd>
+<dt>财务情况</dt><dd>营收：4,118万美元</dd>
+<dt>市场渠道</dt><dd>在东京设有营业所、泰国设有代表处；
+在欧洲、亚洲、北美设有分销渠道</dd>
+<dt>公司背景</dt><dd>个人企业；
+无收并购记录</dd>
+<dt>官网</dt><dd><a href="https://www.honda-el.co.jp/" target="_blank" rel="noopener">https://www.honda-el.co.jp/</a></dd>
+</dl></div>
+<div class="co-card" data-name="Telsonic">
+<div class="co-head"><span class="co-name">Telsonic</span><span class="co-ctry">瑞士</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">1 超声焊接设备、9超声波切割设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>食品包装、电子器件、汽车、医疗器械等设施的焊接切割</dd>
+<dt>财务情况</dt><dd>营收：6,770万美元<br>EBITDA：101.6万美元</dd>
+<dt>市场渠道</dt><dd>北美、欧洲以及亚洲地区有多个办事处和（子）分公司</dd>
+<dt>公司背景</dt><dd>个人公司；
+2009年收购Sonic Solution Systems</dd>
+<dt>官网</dt><dd><a href="https://telsonic.com" target="_blank" rel="noopener">telsonic.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Blatek Industries">
+<div class="co-head"><span class="co-name">Blatek Industries</span><span class="co-ctry">美国</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">13 超声波传感器、15 压电材料</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>超声换能器、超声探头、压电复合材料</dd>
+<dt>财务情况</dt><dd>营收：1,470万美元</dd>
+<dt>市场渠道</dt><dd>自有销售团队，其他地区情况未披露</dd>
+<dt>公司背景</dt><dd>被公司的研发总监，华裔耿博士收购</dd>
+<dt>官网</dt><dd><a href="https://blatek.com/" target="_blank" rel="noopener">blatek.com/</a></dd>
+</dl></div>
+<div class="co-card" data-name="Dukane">
+<div class="co-head"><span class="co-name">Dukane</span><span class="co-ctry">美国</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">1 超声焊接设备、9 超声波切割设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd></dd>
+<dt>财务情况</dt><dd></dd>
+<dt>市场渠道</dt><dd></dd>
+<dt>公司背景</dt><dd></dd>
+<dt>官网</dt><dd><a href="https://dukane.com" target="_blank" rel="noopener">dukane.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Piezo Technologies">
+<div class="co-head"><span class="co-name">Piezo Technologies</span><span class="co-ctry">美国</span><span class="b b-tier-A">A</span></div>
+<div class="co-cat">13 超声波传感器、15 压电材料</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>高性能压电陶瓷材料和定制化超声换能器的研发与制造。产品广泛应用于工业过程控制、医疗技术及无损检测领域，换能器在极端温度、高压等严苛环境下依然实现高灵敏度、高稳定性和宽带宽的测量。压电陶瓷满足高灵敏度传感、高温高压下使用，高达 20 MHz 的宽带宽和超高频应用等特种需求</dd>
+<dt>财务情况</dt><dd>营收：1,830万美元<br>市值：4,101万美元（2013年被收购的价格）</dd>
+<dt>市场渠道</dt><dd>美国设总部和多个办事处和（子）分公司，欧洲、非洲、亚洲等地区利用母公司安费诺的全球销售和分销网络代理商和分销商</dd>
+<dt>公司背景</dt><dd>被收购两次，现在为Amphenol集团的一家子公司</dd>
+<dt>官网</dt><dd><a href="https://piezotechnologies.com" target="_blank" rel="noopener">piezotechnologies.com</a></dd>
+</dl></div>
+</div>
+<div class="tier-block"><div class="tier-head tier-B">B 级 · 关注标的</div><div class="co-grid">
+<div class="co-card" data-name="Microsonic">
+<div class="co-head"><span class="co-name">Microsonic</span><span class="co-ctry">德国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">13 超声波传感器</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>超声波传感器，适用于20mm至10m的目标距离，部分传感器信号解析精度达到 0.025mm</dd>
+<dt>财务情况</dt><dd>毛利润：2439.7万美元<br>EBITDA：701.3万美元</dd>
+<dt>市场渠道</dt><dd>法国设有本地办事处，其余欧洲、美洲、亚洲、非洲和大洋洲主要地区通过授权合作伙伴与分销商网络进行覆盖</dd>
+<dt>公司背景</dt><dd>不详</dd>
+<dt>官网</dt><dd><a href="https://www.microsonic.de/" target="_blank" rel="noopener">https://www.microsonic.de/</a></dd>
+</dl></div>
+<div class="co-card" data-name="PHYSIOMED">
+<div class="co-head"><span class="co-name">PHYSIOMED</span><span class="co-ctry">德国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">10 超声波治疗</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>PHYSIOSON-Expert 系统及配套治疗探头广泛应用于物理治疗、运动康复和骨科领域，能利用高频声能对人体组织进行非侵入性治疗</dd>
+<dt>财务情况</dt><dd>营收：3000-4000万欧元</dd>
+<dt>市场渠道</dt><dd>全球市场覆盖超过75个国家 ，主要通过授权合作伙伴和分销商网络来实现</dd>
+<dt>公司背景</dt><dd>获得战略投资，也对外收购过</dd>
+<dt>官网</dt><dd><a href="https://physiomed.de" target="_blank" rel="noopener">physiomed.de</a></dd>
+</dl></div>
+<div class="co-card" data-name="SONOSYS Ultraschallsysteme">
+<div class="co-head"><span class="co-name">SONOSYS Ultraschallsysteme</span><span class="co-ctry">德国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">14 超声波清洗设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>可以清洗纳米级的微小颗粒和污染物，兆声波清洗技术，应用于半导体、微机电等领域</dd>
+<dt>财务情况</dt><dd>营收：约2亿美元<br>EBITDA：101.94万欧元</dd>
+<dt>市场渠道</dt><dd>参与欧洲和亚洲的展会寻求业务合作机遇</dd>
+<dt>公司背景</dt><dd>两大股东各持股50%，无收并购记录</dd>
+<dt>官网</dt><dd><a href="https://sonosys.info/cn/company" target="_blank" rel="noopener">sonosys.info/cn/company</a></dd>
+</dl></div>
+<div class="co-card" data-name="SONOTEC">
+<div class="co-head"><span class="co-name">SONOTEC</span><span class="co-ctry">德国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">6 工业超声波检测设备、13 超声波传感器</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>柔性塑料管、刚性塑料管的超声波流量计，智能气泡检测仪，等非接触式超声波检测</dd>
+<dt>财务情况</dt><dd>毛利润：0.21亿美元</dd>
+<dt>市场渠道</dt><dd>在美洲设立美国子公司和拥有多个经销商和代理商，在亚洲（如中国和日本等）设立了多个经销商和代理商，在欧洲（如英国）和非洲（如埃及）同样设立了多个经销商和代理商。</dd>
+<dt>公司背景</dt><dd>个人企业</dd>
+<dt>官网</dt><dd><a href="https://sonotec.eu" target="_blank" rel="noopener">sonotec.eu</a></dd>
+</dl></div>
+<div class="co-card" data-name="Cedrat Technologies">
+<div class="co-head"><span class="co-name">Cedrat Technologies</span><span class="co-ctry">法国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">15 压电材料、16 压电阀</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>通过多层压电陶瓷与机械放大或预应力结构实现高位移、高力与高频响应特性，能够在低电压下产生稳定的超声振动输出。其APA与PPA系列广泛应用于超声焊接、清洗、注入及振动辅助加工中，而超声换能系统则覆盖20–60 kHz频段，用于高效能量传递与精密声学控制</dd>
+<dt>财务情况</dt><dd>营收：1,029.8万美元EBITDA：49.1万美元</dd>
+<dt>市场渠道</dt><dd>在中国、印度设立分公司；
+在欧洲、北美、大洋洲设立分销渠道</dd>
+<dt>公司背景</dt><dd>个人企业；
+2012年被Frank Claeyssen收购</dd>
+<dt>官网</dt><dd><a href="https://www.cedrat-technologies.com" target="_blank" rel="noopener">www.cedrat-technologies.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Pytheas technology">
+<div class="co-head"><span class="co-name">Pytheas technology</span><span class="co-ctry">法国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">13 超声波传感器、15 压电材料、16 压电阀</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>非侵入式设计的超声波流量计；利用环境振动、声音等源收集能量的压电材料；具备响应时间低于1毫秒，并在阀门处于开或关状态时无需持续电力供应的压电阀</dd>
+<dt>财务情况</dt><dd>营收：300万美元</dd>
+<dt>市场渠道</dt><dd>美国有子公司；
+北美、欧洲有代理分销渠道</dd>
+<dt>公司背景</dt><dd>个人企业;
+无收并购历史</dd>
+<dt>官网</dt><dd><a href="https://pytheas-technology.com" target="_blank" rel="noopener">pytheas-technology.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Crest Ultrasonics">
+<div class="co-head"><span class="co-name">Crest Ultrasonics</span><span class="co-ctry">美国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">14 超声清洗设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>基于多频共振超声系统与精密能量控制，结合水基与溶剂型清洗平台实现不同材料表面的高效去污与无残留处理。其多槽式与真空蒸汽集成设计可在复杂零部件清洗中提供均匀声场分布与深层清洁效果，同时在医疗设备中以58 kHz与132 kHz双频系统实现对微结构污染物的彻底去除</dd>
+<dt>财务情况</dt><dd>营收：6,010万美元</dd>
+<dt>市场渠道</dt><dd>中国、新加坡、韩国等设立了多个办事处和（子）分公司；
+欧洲、非洲等地区等地设有分销渠道</dd>
+<dt>公司背景</dt><dd>集团子公司；
+1997年收购德国Martin Walter Ultraschalltechnik和瑞士RINCO Ultrasonics AG 
+2025年被Stellex Capital Management收购</dd>
+<dt>官网</dt><dd><a href="https://crest-ultrasonics.com" target="_blank" rel="noopener">crest-ultrasonics.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Fabrisonic">
+<div class="co-head"><span class="co-name">Fabrisonic</span><span class="co-ctry">美国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">12 超声波增材制造</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>专注于低温超声波增材制造技术，应用于金属3D打印，有超声波主轴相关专利</dd>
+<dt>财务情况</dt><dd>营收：100万美元</dd>
+<dt>市场渠道</dt><dd>在美国设有总部，并通过母公司在全球的服务中心开展销售与服务</dd>
+<dt>公司背景</dt><dd>专利技术孵化出的公司，2025年3月被美国金属材料集团UPM收购</dd>
+<dt>官网</dt><dd><a href="https://fabrisonic.com" target="_blank" rel="noopener">fabrisonic.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Sono-Tek">
+<div class="co-head"><span class="co-name">Sono-Tek</span><span class="co-ctry">美国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">8 超声波分散粉碎 、11 超声波喷涂设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>超声波精密喷涂技术</dd>
+<dt>财务情况</dt><dd>市值：0.72亿美元<br>营收：0.21亿美元<br>EBITDA：0.02亿美元</dd>
+<dt>市场渠道</dt><dd>在德国、中国（广州）、韩国、日本、俄罗斯、土耳其等地设有应用实验室，在新加坡设销售支持办公室服务亚洲客户</dd>
+<dt>公司背景</dt><dd>纳斯达克交易所上市</dd>
+<dt>官网</dt><dd><a href="https://www.sono-tek.com" target="_blank" rel="noopener">https://www.sono-tek.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Ionix Advanced Technologies">
+<div class="co-head"><span class="co-name">Ionix Advanced Technologies</span><span class="co-ctry">英国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">3 超声波无损检测成像13 超声波传感器、15 压电材料</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>极端环境和定制超声波传感器的先进制造商，-55 °C 到 +550 °C ，包括压电陶瓷&amp;传感器设计和制造</dd>
+<dt>财务情况</dt><dd>营收：1000万美元<br>估值：1370万美元</dd>
+<dt>市场渠道</dt><dd>以英国为总部制造基地，美国、加拿大、欧洲市场由Aaron Greenbank作为业务发展经理，世界其他地区由Nadim Borini作为销售总监</dd>
+<dt>公司背景</dt><dd>A轮融资阶段，2020年估值约1370万美元</dd>
+<dt>官网</dt><dd><a href="https://ionixadvancedtechnologies.co.uk/" target="_blank" rel="noopener">ionixadvancedtechnologies.co.uk/</a></dd>
+</dl></div>
+<div class="co-card" data-name="Pillarhouse International">
+<div class="co-head"><span class="co-name">Pillarhouse International</span><span class="co-ctry">英国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">11 超声波喷涂设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>超声波喷涂技术主要集成在其选择性波峰焊系统中，通过高精度的超声波助焊剂喷头实现均匀、可控的助焊剂沉积，适用于不同复杂度的电子制造工艺，拥有专利1.5mm微型喷嘴</dd>
+<dt>财务情况</dt><dd>营收：1501.3万美元</dd>
+<dt>市场渠道</dt><dd>在英国切姆斯福德的设有设计与制造总部，并在美国、中国及墨西哥设有销售与服务支持机构，同时在全球50多个国家通过代理商／分销商提供产品与服务</dd>
+<dt>公司背景</dt><dd>法人独资，无收并购历史</dd>
+<dt>官网</dt><dd><a href="https://pillarhouse.co.uk/" target="_blank" rel="noopener">pillarhouse.co.uk/</a></dd>
+</dl></div>
+<div class="co-card" data-name="Sonatest">
+<div class="co-head"><span class="co-name">Sonatest</span><span class="co-ctry">英国</span><span class="b b-tier-B">B</span></div>
+<div class="co-cat">2 超声波扫描显微镜、3 超声波无损检测成像、6 工业超声波检测设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>专注于工业超声波无损检测设备的生产，其产品从传统超声检测逐步演变至先进相控阵、TFM / FMC、多技术集成方案，相控阵成像检测采样频率最高可达 125 MHz</dd>
+<dt>财务情况</dt><dd>营收：1471万美元</dd>
+<dt>市场渠道</dt><dd>总部设在英国米尔顿凯恩斯，在美国得克萨斯州设有生产设施及美国分公司，代理商、经销商及服务中心遍布全球</dd>
+<dt>公司背景</dt><dd>被中国德华材料检测有限公司和法国 Sofranel 公司收购</dd>
+<dt>官网</dt><dd><a href="https://sonatest.com" target="_blank" rel="noopener">sonatest.com</a></dd>
+</dl></div>
+</div>
+<div class="tier-block"><div class="tier-head tier-C">C 级 · 观察标的</div><div class="co-grid">
+<div class="co-card" data-name="Flosonics Medical">
+<div class="co-head"><span class="co-name">Flosonics Medical</span><span class="co-ctry">加拿大</span><span class="b b-tier-C">C</span></div>
+<div class="co-cat">10 超声波治疗</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>技术应用集中于可穿戴多普勒超声领域，其核心产品 FloPatch 系统是一种无创的血流动力学监测解决方案</dd>
+<dt>财务情况</dt><dd>营收：2330万美元</dd>
+<dt>市场渠道</dt><dd>加拿大总部，美国分公司，亚洲非洲欧洲通过经销商</dd>
+<dt>公司背景</dt><dd>C轮融资阶段</dd>
+<dt>官网</dt><dd><a href="https://flosonicsmedical.com" target="_blank" rel="noopener">flosonicsmedical.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Söring">
+<div class="co-head"><span class="co-name">Söring</span><span class="co-ctry">德国</span><span class="b b-tier-C">C</span></div>
+<div class="co-cat">10 超声波治疗</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>超声手术产品，在肝脏手术、脊柱手术、神经外科及创面清创等应用领域拥有多项专利</dd>
+<dt>财务情况</dt><dd>营收：1023.2万美元<br>EBITDA：217.6万美元</dd>
+<dt>市场渠道</dt><dd>在美国、哥伦比亚和俄罗斯设有分支机构，分销网络覆盖全球90多个国家。</dd>
+<dt>公司背景</dt><dd>被投资公司收购</dd>
+<dt>官网</dt><dd><a href="https://soering.de" target="_blank" rel="noopener">soering.de</a></dd>
+</dl></div>
+<div class="co-card" data-name="Zimmer Medizin Systeme">
+<div class="co-head"><span class="co-name">Zimmer Medizin Systeme</span><span class="co-ctry">德国</span><span class="b b-tier-C">C</span></div>
+<div class="co-cat">4 超声波美容仪、10 超声波治疗</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>通过多频换能器实现不同深度的能量传导，促进组织修复、缓解疼痛、改善血液循环与细胞代谢，同时广泛应用于运动康复与医美护理。不同产品的频率如1 MHz 与 3 MHz ，0.8 MHz 和 2.4 MHz</dd>
+<dt>财务情况</dt><dd>营收：1.54亿美元<br>EBITDA：336万美元</dd>
+<dt>市场渠道</dt><dd>除德国本部外，在美国、中国、奥地利、比利时、法国等都有分支机构</dd>
+<dt>公司背景</dt><dd>家族企业，有对外收并购的动作</dd>
+<dt>官网</dt><dd><a href="https://zimmer.de/" target="_blank" rel="noopener">zimmer.de/</a></dd>
+</dl></div>
+<div class="co-card" data-name="EDAP-Focal One">
+<div class="co-head"><span class="co-name">EDAP-Focal One</span><span class="co-ctry">法国</span><span class="b b-tier-C">C</span></div>
+<div class="co-cat">10 超声波治疗</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>前列腺癌治疗、肾结石治疗以及子宫内膜异位症、尿路疾病、妇科疾病等临床领域的治疗</dd>
+<dt>财务情况</dt><dd>营收：7,271.1万美元<br>EBITDA：-1,751.1万美元</dd>
+<dt>市场渠道</dt><dd>马来西亚、意大利有子公司；
+北美、南美洲有代理分销渠道</dd>
+<dt>公司背景</dt><dd>上市公司；
+1994年收购Technomed International SA</dd>
+<dt>官网</dt><dd><a href="https://focalone.com" target="_blank" rel="noopener">focalone.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="Imasonic">
+<div class="co-head"><span class="co-name">Imasonic</span><span class="co-ctry">法国</span><span class="b b-tier-C">C</span></div>
+<div class="co-cat">6 工业超声波检测设备、10 超声波治疗</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>具备高灵敏度与宽频带性能的医疗影像与诊断的超声换能器，覆盖 200
+kHz 至 20 MHz 频率范围；用于聚焦超声治疗（HIFU）的高功率超声换能器，典型中心频率约 900 kHz，工作带宽范围约 0.77-1.07 MHz</dd>
+<dt>财务情况</dt><dd>营收：650万美元</dd>
+<dt>市场渠道</dt><dd>日本有官方总代理；
+亚洲欧洲、北美有代理分销渠道</dd>
+<dt>公司背景</dt><dd>家族企业；
+无收并购历史</dd>
+<dt>官网</dt><dd><a href="https://imasonic.com" target="_blank" rel="noopener">imasonic.com</a></dd>
+</dl></div>
+<div class="co-card" data-name="SONIMAT">
+<div class="co-head"><span class="co-name">SONIMAT</span><span class="co-ctry">法国</span><span class="b b-tier-C">C</span></div>
+<div class="co-cat">1 超声焊接设备、9 超声波切割设备</div>
+<dl class="co-dl">
+<dt>产品技术</dt><dd>食品包装、汽车内饰、航天飞机、医疗器械等领域的焊接切割</dd>
+<dt>财务情况</dt><dd>营收：1,571.2万美元<br>EBITDA：79万美元</dd>
+<dt>市场渠道</dt><dd>在中国、美国设有子公司；
+在法国设有多个生产与服务基地
+在北美、亚洲、欧洲地区有代理分销渠道</dd>
+<dt>公司背景</dt><dd>个人企业;
+2004年被Europe Technologies收购</dd>
+<dt>官网</dt><dd><a href="https://www.sonimat.com" target="_blank" rel="noopener">www.sonimat.com</a></dd>
+</dl></div>
+</div></div>
+ </div>
+</div>
+
+<script>
+"use strict";
+var COMPANY_TIER = {"Fuji Ceramics": "A", "Insight K.K.": "A", "JAPAN PROBE": "A", "Tokyo Instruments": "A", "Ueda Japan Radio": "A", "Ultex": "A", "honda-el": "A", "Telsonic": "A", "Blatek Industries": "A", "Dukane": "A", "Piezo Technologies": "A", "Microsonic": "B", "PHYSIOMED": "B", "SONOSYS Ultraschallsysteme": "B", "SONOTEC": "B", "Cedrat Technologies": "B", "Pytheas technology": "B", "Crest Ultrasonics": "B", "Fabrisonic": "B", "Sono-Tek": "B", "Ionix Advanced Technologies": "B", "Pillarhouse International": "B", "Sonatest": "B", "Flosonics Medical": "C", "Söring": "C", "Zimmer Medizin Systeme": "C", "EDAP-Focal One": "C", "Imasonic": "C", "SONIMAT": "C"};
+var SAMPLE_DATA = {"generatedAt": "示例数据", "windowDays": 7, "items": [{"company": "Telsonic", "title": "Telsonic 发布新一代超声波金属焊接系统", "summary": "示例：Telsonic 在官网发布面向电池极耳焊接的新系统，主打高功率稳定性。", "sentiment": "positive", "reason": "新品发布，强化技术领先形象", "source": "公司官网", "url": "https://telsonic.com", "date": "2026-11-10"}, {"company": "Sonatest", "title": "Sonatest 相控阵设备获欧洲铁路订单", "summary": "示例：Sonatest 宣布获得欧洲铁路无损检测设备批量订单。", "sentiment": "positive", "reason": "订单落地，利好营收", "source": "行业媒体", "url": "https://sonatest.com", "date": "2026-11-09"}]};
+var DATA = SAMPLE_DATA;
+var curTab = "news", fTier = "", fSent = "";
+
+var COMPANIES = ["Fuji Ceramics", "Insight K.K.", "JAPAN PROBE", "Tokyo Instruments", "Ueda Japan Radio", "Ultex", "honda-el", "Telsonic", "Blatek Industries", "Dukane", "Piezo Technologies", "Microsonic", "PHYSIOMED", "SONOSYS Ultraschallsysteme", "SONOTEC", "Cedrat Technologies", "Pytheas technology", "Crest Ultrasonics", "Fabrisonic", "Sono-Tek", "Ionix Advanced Technologies", "Pillarhouse International", "Sonatest", "Flosonics Medical", "Söring", "Zimmer Medizin Systeme", "EDAP-Focal One", "Imasonic", "SONIMAT"];
+(function(){ /* tier lookup filled below */ })();
+
+function esc(s){ var d=document.createElement("div"); d.textContent=String(s==null?"":s); return d.innerHTML; }
+function sentLabel(s){ return s==="positive"?"正面":(s==="negative"?"负面":"中性"); }
+function sentClass(s){ return s==="positive"?"b-pos":(s==="negative"?"b-neg":"b-neu"); }
+
+function kv(label, val, cls, d){ return '<div class="kv"><div class="k">'+esc(label)+'</div><div class="v '+(cls||'')+'">'+esc(val)+'</div><div class="d">'+esc(d||'')+'</div></div>'; }
+
+function render() {
+  var items = (DATA && DATA.items) || [];
+  var pos=0,neg=0,neu=0; var cos={};
+  items.forEach(function(it){ if(it.sentiment==="positive")pos++; else if(it.sentiment==="negative")neg++; else neu++; cos[it.company]=1; });
+  var sub = document.getElementById("sub");
+  if (sub) sub.textContent = "29 家短名单公司 · 最近 " + (DATA.windowDays||7) + " 天舆情 · 更新于 " + (DATA.generatedAt||"—");
+  var tags = document.getElementById("heroTags");
+  if (tags) tags.innerHTML = '<span class="tag">正面 '+pos+'</span><span class="tag">负面 '+neg+'</span><span class="tag">中性 '+neu+'</span><span class="tag">有舆情公司 '+Object.keys(cos).length+'</span>';
+
+  var kvRow = document.getElementById("kvRow");
+  if (kvRow) kvRow.innerHTML = kv("舆情总数", items.length, "", "最近 "+(DATA.windowDays||7)+" 天")
+    + kv("正面", pos, "pos", "订单/新品/合作/融资")
+    + kv("负面", neg, "neg", "诉讼/亏损/召回/裁减")
+    + kv("中性", neu, "", "常规动态")
+    + kv("覆盖公司", Object.keys(cos).length, "", "无舆情公司不列入");
+
+  var list = document.getElementById("newsList");
+  if (!list) return;
+  var shown = items.filter(function(it){
+    if (fSent && it.sentiment!==fSent) return false;
+    if (fTier && COMPANY_TIER[it.company]!==fTier) return false;
+    return true;
+  });
+  if (!shown.length) { list.innerHTML = '<div class="empty">该筛选条件下暂无舆情</div>'; return; }
+  list.innerHTML = shown.map(function(it, i){
+    var url = String(it.url||"#");
+    return '<div class="news"><div class="h"><span class="co-tag">'+esc(it.company)+'</span><a href="'+esc(url)+'" target="_blank" rel="noopener">'+esc(it.title)+'</a><span class="b '+sentClass(it.sentiment)+'">'+sentLabel(it.sentiment)+'</span></div>'
+    + '<dl><dt>摘要</dt><dd>'+esc(it.summary)+'</dd>'
+    + '<dt>判断理由</dt><dd>'+esc(it.reason)+'</dd>'
+    + '<dt>来源</dt><dd><a href="'+esc(url)+'" target="_blank" rel="noopener">'+esc(it.source)+'</a>'+(it.date?' · '+esc(it.date):'')+'</dd></dl></div>';
+  }).join("");
+}
+
+function switchTab(t) {
+  curTab = t;
+  var bn=document.getElementById("tabBtnNews"), bp=document.getElementById("tabBtnProfile");
+  var pn=document.getElementById("pageNews"), pp=document.getElementById("pageProfile");
+  if(bn) bn.className = t==="news"?"on":"";
+  if(bp) bp.className = t==="profile"?"on":"";
+  if(pn) pn.className = "page"+(t==="news"?" on":"");
+  if(pp) pp.className = "page"+(t==="profile"?" on":"");
+  try { if (window.DaimonCanvas && typeof window.DaimonCanvas.setViewState==="function") window.DaimonCanvas.setViewState({tab:t}); } catch(e){}
+}
+
+try {
+  var bn=document.getElementById("tabBtnNews"), bp=document.getElementById("tabBtnProfile");
+  if(bn) bn.addEventListener("click", function(){switchTab("news");});
+  if(bp) bp.addEventListener("click", function(){switchTab("profile");});
+  var fbar=document.getElementById("tierFilter");
+  if(fbar) fbar.addEventListener("click", function(ev){
+    var b = ev.target; if(!b || !b.getAttribute) return;
+    var t=b.getAttribute("data-tier"), s=b.getAttribute("data-sent");
+    if(t===null && s===null) return;
+    var chips=fbar.querySelectorAll(".chip");
+    if(t!==null){ fTier=t; chips.forEach(function(c){ if(c.getAttribute("data-tier")!==null) c.className="chip"+(c===b?" on":""); }); }
+    if(s!==null){ fSent=s; chips.forEach(function(c){ if(c.getAttribute("data-sent")!==null) c.className="chip"+(c===b?" on":""); }); }
+    render();
+  });
+} catch(e){}
+
+render();
+
+fetch("data.json?t=" + Date.now()).then(function(r){ return r.json(); }).then(function(d){
+  if (d && Array.isArray(d.items)) { DATA = d; render(); }
+}).catch(function(){});
+
+</script>
+<footer style="text-align:center;color:#5f6368;font-size:12px;padding:22px 16px;border-top:1px solid #e5e7eb">
+ 数据来源：Google News 检索 + DeepSeek 摘要与情绪判断 · 每天 08:17（北京时间）自动更新 · 仅供内部研究参考，不构成投资建议
+</footer>
+</body>
+</html>
