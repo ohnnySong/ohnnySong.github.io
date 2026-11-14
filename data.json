@@ -1,13 +1,13 @@
 {
- "generatedAt": "2026-11-13T08:17:55+08:00",
+ "generatedAt": "2026-11-14T08:17:58+08:00",
  "windowDays": 30,
  "items": [
   {
    "company": "Piezo Technologies",
    "title": "压电技术用于晶圆几何形状的主动控制",
-   "summary": "报道介绍利用压电技术对晶圆几何形状进行主动控制的方法，属于压电材料在半导体制造领域的应用。",
+   "summary": "报道介绍压电技术可对晶圆几何形状进行主动控制，属于压电材料在半导体制造中的新应用方向。该技术有望提升晶圆加工精度与良率。",
    "sentiment": "neutral",
-   "reason": "技术应用报道，无明确利好或利空指向。",
+   "reason": "属于技术应用报道，未涉及具体订单或业绩变化。",
    "source": "Design World",
    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQc09YZTk2Z1NnU294SWg3bE5Vb2kyeDUtX2tKeUliVmw3VjhyNUZqR1FMcTZ4Q1E5ZnZPLXBiMDhULUxTSWQ5U2ZHVGxBQ0xlbjBIMllHLWZBVzdOUHFGRDRsUFhhTXZud1pHN3g5Y19oUGU5RmMxT3p0Y05yWjZkclhnSnIzUE1ES0d4eXpvV0dhZw?oc=5",
    "date": "2026-11-11"
@@ -15,59 +15,59 @@
   {
    "company": "Sono-Tek",
    "title": "利弗莫尔实验室研究协议能否助力佩塔卢马成为“钻石谷”？",
-   "summary": "报道讨论利弗莫尔国家实验室的研究合作协议对佩塔卢马地区的潜在带动作用，文中提及当地企业Sono-Tek。",
+   "summary": "报道讨论劳伦斯利弗莫尔国家实验室的研究合作协议对佩塔卢马地区的影响，文中提及当地企业Sono-Tek。内容聚焦区域产业合作前景。",
    "sentiment": "neutral",
-   "reason": "区域发展议题，公司仅为顺带提及，情绪中性。",
+   "reason": "仅为区域发展报道中的顺带提及，无明确利好或利空信息。",
    "source": "The Press Democrat",
    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVlBzck9LOEN3LWJESTd2eFFFVHZJaUw3V0lad2J2MDZFUW9lbDYtVXozb0V1Mkd5VVQ3aF92aWZWc3BrQzNub05uaDQxdjZWSlVmVmx5TVNHRDhJbXN2cW84VDJ3RzhwT3VEV1FVbXIxYmxPVmZ0S2xWTGs4Z1hWYg?oc=5",
    "date": "2026-11-09"
   },
   {
-   "company": "Flosonics Medical",
-   "title": "FloSonics Medical获iGan领投500万美元种子轮融资",
-   "summary": "FloSonics Medical获得由iGan领投的500万美元种子轮融资，用于推进其医疗超声相关业务。",
-   "sentiment": "positive",
-   "reason": "获得融资属于典型利好信号。",
-   "source": "PEI Private Equity",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSDdpMEVBUFRzbTEtODZiaVpNTVlYQXdpT2h2RFFGN1dvT0pZd3hNbWloUXhhV0xGZkxQbDJuWXEwRmxKcy1DQmhDQUl6dTBaR0wzN2w2X0VfYi0zR21xZ1FGRkE0LTB5Yjc1Q29MNDNoUERabEZteGhZSk42V3c4dU95T0hMcWdZS0R4ZnBuR3ViQQ?oc=5",
-   "date": "2026-11-08"
-  },
-  {
    "company": "EDAP-Focal One",
    "title": "EDAP TMS（FOCL）2026年第三季度财报电话会亮点：HIFU收入增长26%，利润率……",
-   "summary": "EDAP TMS在第三季度财报电话会中披露HIFU业务收入同比增长26%，利润率情况亦受关注。",
+   "summary": "EDAP TMS在第三季度财报电话会中披露HIFU业务收入同比增长26%，利润率情况受到关注。公司核心超声治疗业务表现强劲。",
    "sentiment": "positive",
-   "reason": "核心业务收入显著增长，属业绩利好。",
+   "reason": "HIFU收入大幅增长体现核心业务扩张。",
    "source": "Yahoo Finance",
    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPd3I2NElNcDQwN3RKUjBHbVo5YWZUTXRvQTJYa2xfOHdGNlB6Z283X3NpWTN2clpwM1pmWVFQWXByU2hyM2d6TU9HYjRkbW9CcGpYNzlhQWVON0RoTTYtLUc2X2Z5dlBSWm92b0RrcjdBSXEyWmZrMFJ2Tjk0QmNUUnBGWG82alU?oc=5",
    "date": "2026-11-06"
   },
   {
    "company": "EDAP-Focal One",
-   "title": "EDAP TMS公布2026年第三季度财报：营收980万美元",
-   "summary": "EDAP TMS发布2026年第三季度财务业绩，实现营收980万美元。",
+   "title": "EDAP TMS公布2026年第三季度财务业绩：营收980万美元",
+   "summary": "EDAP TMS发布2026年第三季度财报，实现营收980万美元。报道聚焦公司季度经营表现。",
    "sentiment": "neutral",
-   "reason": "仅披露营收数字，未体现明确增减方向。",
+   "reason": "仅陈述营收数字，未体现明确增长或下滑趋势。",
    "source": "GuruFocus",
    "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPYURCNXF2VHdmdWZlSHZ2ZmtiX2lhOERPYXNpUG5OQlIxTmdZMENEbU15Y3dkR3N4TTNGa3FobWpoajU1Wl90a19vY0ZiTmI3ZFlmbUEwaUVRZG1EWU5kTW1lVEhQcUNFcl83OExMV3NoZF9aN2JsZ09XTHBFUmVQWmxfREcycm1oOFBEcllicHJNWncxZkhsY2YtY3FEc1M0RGc2V0VneUZDdWxtS2tpR2dHbk1LUmp1WExtdG5vVXhUSzlpeW16ZDFOcEVSUTFHcVhacy1zUnN6N0ZmTk81OGFpVmNjSzhiUE9OTDR3?oc=5",
    "date": "2026-11-05"
   },
   {
    "company": "EDAP-Focal One",
-   "title": "EDAP TMS 2026年第三季度财报电话会记录",
-   "summary": "EDAP TMS第三季度财报电话会的完整文字记录，涉及公司经营与财务情况讨论。",
+   "title": "EDAP TMS 2026年第三季度财报电话会议记录",
+   "summary": "Benzinga发布EDAP TMS第三季度财报电话会议的完整记录，涵盖管理层对业绩与业务进展的说明。属于常规财报信息发布。",
    "sentiment": "neutral",
-   "reason": "会议记录类内容，情绪中性。",
+   "reason": "财报电话会记录属中性信息，无明确情绪指向。",
    "source": "Benzinga",
    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNd2pUU3lrN0R4a0d5eFhtZHBmVVNJTGw4ZEdsQ3FVVWRuMFZ2Y0VpYlZJSmJmX3R6X1JJVlJGcHFOR2d5NzY0TG12dXVEXzBRdXlwZmpfV28zejRDNW11aDlXS2ZZMXRfRjNidmZKcm5XekhOV01tdDlkdWxpRV9oaUp6Q0NUeHl2Nng1dXl3RQ?oc=5",
    "date": "2026-11-05"
   },
   {
+   "company": "Söring",
+   "title": "研究人员在推进脊髓损伤治疗方面取得进展",
+   "summary": "约翰霍普金斯医学院报道研究人员在脊髓损伤治疗领域取得新进展，研究中使用Söring相关技术设备。属于医学研究进展报道。",
+   "sentiment": "neutral",
+   "reason": "学术研究进展报道，未涉及公司经营层面变化。",
+   "source": "Johns Hopkins Medicine",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQRzVRR19rX1hmVmZqeFZUcTRnbnBSVVVFVGpqU0h2dnhDcUFqQUo0ZVc0TnJVeGVMQVpMTW1kQmg0eGY3ZlZZdktyLWltQlJldGJhSWlNcGN2WU0xZHR5UW4yWTVUSnV6Wkw5SzQ0MEVrNjg0T0dkLThHWEQ1Vy1NVGk2NTBjdGk2cGdaQ3hHeElPR2REOVppQ1ByM0dFX0hEdXJWZXRka3JoczdKU1pla0lkTUtpcGJKUTNaejh1enhrMFZsYVM4?oc=5",
+   "date": "2026-11-05"
+  },
+  {
    "company": "Piezo Technologies",
    "title": "压电技术实现对晶圆几何形状的主动控制",
-   "summary": "报道介绍压电技术在晶圆几何形状主动控制方面的应用，体现压电材料在半导体工艺中的价值。",
+   "summary": "报道介绍压电技术可用于晶圆几何形状的主动控制，展示压电材料在半导体精密制造中的应用潜力。内容偏技术介绍。",
    "sentiment": "neutral",
-   "reason": "技术进展报道，无明确商业利好或利空。",
+   "reason": "技术应用类报道，无订单或业绩相关信息。",
    "source": "Nanowerk",
    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9za2Z1MjdLaHBnbDJzRXZGWWEtNE54alUxN2lCM1FFRXBnTDF1dWE5czI5VldIMDRxYTRzUXZ1S2Y0NWppYXpWVk1xb016S3N2WEpTM3BNeVUtSkEwUWlXSl9lTUpVcXNMYl9yM0l0Zw?oc=5",
    "date": "2026-11-04"
@@ -75,29 +75,19 @@
   {
    "company": "Dukane",
    "title": "Stellex支持的Crest收购制造商Dukane",
-   "summary": "由Stellex支持的Crest完成对制造商Dukane的收购，Dukane为超声波设备领域厂商。",
+   "summary": "私募机构Stellex支持的Crest宣布收购制造商Dukane。Dukane作为被收购方，其所有权将发生变更。",
    "sentiment": "neutral",
-   "reason": "被收购方处境中性，交易本身未显示不利因素。",
+   "reason": "被收购本身属中性事件，报道未披露交易利弊细节。",
    "source": "PEI Private Equity",
    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPblBkR0xhZnhIMmV5bHQ5b0plN1o1WmdtZEJKY013cHJ2aHdWdUtRR0FMZzh1eTBaU0oyd3o4NmVsRWJSUXhvbVNEN3VKdTZJQ09QM2ZFU285Z2FZLXFfSHNPWWRxWmRuYU4xbVR1RGNxOGJOcHh6eUxJMEpWdThCbXBFSWktSXY3LXJBQW0tbDNmTlBRUElPVjBR?oc=5",
    "date": "2026-10-29"
   },
   {
-   "company": "Crest Ultrasonics",
-   "title": "Stellex历经漫长募资完成其最大规模基金",
-   "summary": "Stellex完成其迄今规模最大的基金募集，此前募资过程较为漫长，该机构与超声波清洗企业Crest相关。",
-   "sentiment": "neutral",
-   "reason": "基金募资消息，与目标公司关联间接，情绪中性。",
-   "source": "PEI Private Equity",
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQREFkQlctQlRNeEF0cHNabWhLRm5QQmp2UnhWTm16dDQ2RV9Vd1pobW1JVHpFUUNES0xMZlZ2QkF4UDVrcjJ6c1FjSkVaQzFXT1lXY1ZxbHBSVGNQVGJhQUFRaWM0cXhPUDRDOW5JbExNTVRUajI3OTF4aVRpeDdRb01YZmVwSW9JTV9OU3NDTnFNWGRkZUhrNDB6Y1h6LWpoTjVB?oc=5",
-   "date": "2026-10-25"
-  },
-  {
    "company": "Cedrat Technologies",
    "title": "压电执行器市场规模、行业份额及至2034年预测",
-   "summary": "市场研究报告给出压电执行器市场规模、行业份额及到2034年的增长预测，Cedrat Technologies为该领域厂商。",
+   "summary": "市场研究报告预测压电执行器行业至2034年的市场规模与份额变化。Cedrat Technologies作为该领域厂商被纳入行业分析范围。",
    "sentiment": "neutral",
-   "reason": "行业市场报告，未针对公司具体业绩。",
+   "reason": "行业市场预测报告，未针对公司具体经营作出评价。",
    "source": "Fortune Business Insights",
    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcWo1WmxlT2Y0c1g3eVU1TWo1NXFXWk4yLTZ0blJRdnkxLU1OUk83a0Z6V2U5eWJBRkR6aXAyQUpkT0JzTUk5OG1JNWZGTEpPRW5Sa3I1LVMzNk5RbUk5b09HTFBYWjdEaHI5U3Zuc1ZvVWRrR3M5bTI3UEgwWWNYUXJhYw?oc=5",
    "date": "2026-10-19"
@@ -105,42 +95,32 @@
   {
    "company": "Sono-Tek",
    "title": "Sono-Tek：长期投资者的三大关键要点",
-   "summary": "文章总结Sono-Tek对长期投资者而言值得关注的三大要点，涉及公司业务与前景分析。",
+   "summary": "报道总结Sono-Tek对长期投资者而言的三大关键看点，涉及公司业务前景与投资价值。内容偏投资分析视角。",
    "sentiment": "neutral",
-   "reason": "投资分析类内容，情绪偏中性。",
+   "reason": "投资分析类文章，未明确给出利好或利空结论。",
    "source": "Yahoo Finance",
    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPOS12SmVoUHQwTDJ1U0JsVnl5bTV5RmlSQXA2cjhTTlN3ak5KUnd1OUxjdlJpZjcwRm1BVGxtaTdJQVFRNTFqRmNKRmxyWW5HaUlCQmpvMDRmUW9hM0lSU2Q0eHllX19BTnlTOEJjMldvaFBYd2N5bmM0RHd2V1p1TGZ5dEY0NGNWTjRSc0FhM1NEVms?oc=5",
    "date": "2026-10-19"
   },
   {
    "company": "Sono-Tek",
-   "title": "Sono-Tek：订单创纪录，但估值合理（纳斯达克：SOTK）",
-   "summary": "分析指出Sono-Tek订单量创下纪录，但当前估值已属合理水平。",
+   "title": "Sono-Tek：订单创纪录，但估值合理（NASDAQ:SOTK）",
+   "summary": "分析指出Sono-Tek订单量创下纪录，显示业务需求强劲，但当前估值被认为处于合理水平。文章兼顾增长与估值两方面。",
    "sentiment": "positive",
-   "reason": "订单创纪录体现业务增长，属利好。",
+   "reason": "订单创纪录体现业务增长动能。",
    "source": "Seeking Alpha",
    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZWc5bm5WaEVQWGVvMmRQX1VWODVscjdPUW5jSWpDbWRUdEdWazZhTTdpZ1ZIMjJRNTdlc2c4LVplN3I2clByUXNTc1lNbGlBRHpiM05ldUdtVVdnOEdNRkRHWjc1MVdWTVU4c0JJLWJQelVhaDA3eTk2cUdBU1lidUliR1lMdTA4?oc=5",
    "date": "2026-10-16"
   },
   {
    "company": "Sono-Tek",
-   "title": "Sono-Tek发布2027财年第二季度财务业绩",
-   "summary": "Sono-Tek公布2027财年第二季度财务业绩，具体数据待披露。",
-   "sentiment": "neutral",
-   "reason": "仅发布财报，未体现明确好坏方向。",
-   "source": "AlphaStreet",
-   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5fMzNQMDZqRlFnTzBmYzFIOTV2bF9BNVFZY0JzZndYTEhNZ1RUeGtXU3pobkx4NS1BNmFKWno5cVFFQkk2S1gySjNZTTEzUy1yUDV6RzVzSWVqMVVoN2pKVl8ydjdOQXI4QzZScjZPZjdZNGRrZGgzOHNyQ0E0UdIBgwFBVV95cUxNNnc3Rk9IejZ5TnlqbTQtRHdFUjJfNlJ0SW5zQkRpTlF1RW0wa0o1ZlptRDhITHVWT2UwNDRrVjRJQTFLa1RTRzNIczJONzlyVWZOU2hBOHNHUDhTUzZnYlpDLUFsaVNKSExjeC1XRW1zNUR6Y2hSUDhQWGN4ekJKUWRkSQ?oc=5",
-   "date": "2026-10-14"
-  },
-  {
-   "company": "Sono-Tek",
-   "title": "Sono-Tek（SOTK）第二季度盈利与营收均不及预期",
-   "summary": "Sono-Tek第二季度业绩未达分析师预期，盈利和营收双双低于预估。",
-   "sentiment": "negative",
-   "reason": "业绩不及预期属利空信号。",
-   "source": "Yahoo Finance",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPalc3S0tiU0kwMGp4T2toa01pSGdpYkd6VmJtemcwOXVVWnZILVh3RGdPQzN1dDJ6UzZPU1dlS1FIcjdtREs1dlBRYzZjNURRRUNocHVtVkkzeWZsVFdvWXBlaWVjRlFVdjJSdW15N0Nub1NZLU0zWHk1VTBvblF4RG9MNU1ldk9KRFBlcEMyWTQtS0kxdFhMSWZUTG1jZw?oc=5",
-   "date": "2026-10-14"
+   "title": "Sono-Tek在医疗应用领域实现强劲增长",
+   "summary": "报道称Sono-Tek在医疗应用领域取得强劲增长，显示其超声涂覆技术在医疗市场的拓展成效。",
+   "sentiment": "positive",
+   "reason": "医疗应用强劲增长表明业务扩张。",
+   "source": "Pluang",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWGQwdWhsMDZQdlV5dWR0bndKUzVWN1otZ0QwbUxMM2d4UFhCdUFrTjFEVFpLaHVtY19wYUZVUG41LXpadzVDbUtLOHN1eDdjTmE0TUZLaWpzSFJXQ2cxYU5oam9EVklIOVBxd1Q5N0djTXlFUUQ2elJjWFpwTEFSdUhkN1pvbVplNVppRjB3RUhVbnc3RUgyaVRiWFBoYnI2dWkzSE1JdWU?oc=5",
+   "date": "2026-10-16"
   }
  ]
 }
