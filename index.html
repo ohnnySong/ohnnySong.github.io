@@ -268,37 +268,41 @@ function freshCompanies(){
 /* ---------- 舆情页 ---------- */
 function render(){
   var items = (DATA && DATA.items) || [];
-  var pos=0,neg=0,neu=0; var cos={};
-  items.forEach(function(it){ if(it.sentiment==="positive")pos++; else if(it.sentiment==="negative")neg++; else neu++; cos[it.company]=1; });
-  var weekCnt = items.filter(function(it){return isFresh(it.date);}).length;
-  var sub = document.getElementById("sub");
-  if (sub) sub.textContent = COMPANIES.length + " 家监控公司 · 最近 " + (DATA.windowDays||30) + " 天舆情 · 更新于 " + (DATA.generatedAt||"—");
-  var tags = document.getElementById("heroTags");
-  if (tags) tags.innerHTML = '<span class="tag">正面 '+pos+'</span><span class="tag">负面 '+neg+'</span><span class="tag">中性 '+neu+'</span>'
-    + '<span class="tag">🔥 近一周 '+weekCnt+'</span><span class="tag">有舆情公司 '+Object.keys(cos).length+'</span>';
-
-  var kvRow = document.getElementById("kvRow");
-  if (kvRow) kvRow.innerHTML = kv("舆情总数", items.length, "", "最近 "+(DATA.windowDays||30)+" 天")
-    + kv("正面", pos, "pos", "订单/新品/合作/融资")
-    + kv("负面", neg, "neg", "诉讼/亏损/召回/裁减")
-    + kv("中性", neu, "", "常规动态")
-    + kv("覆盖公司", Object.keys(cos).length, "", "无舆情公司不列入");
-
-  var list = document.getElementById("newsList");
-  if (!list) return;
+  var filtering = !!(fTier || fSent || fWeekOnly);
   var shown = items.filter(function(it){
     if (fSent && it.sentiment!==fSent) return false;
     if (fTier && companyTier(it.company)!==fTier) return false;
     if (fWeekOnly && !isFresh(it.date)) return false;
     return true;
   });
+  var pos=0,neg=0,neu=0; var cos={};
+  shown.forEach(function(it){ if(it.sentiment==="positive")pos++; else if(it.sentiment==="negative")neg++; else neu++; cos[it.company]=1; });
+  var gpos=0,gneg=0,gneu=0;
+  items.forEach(function(it){ if(it.sentiment==="positive")gpos++; else if(it.sentiment==="negative")gneg++; else gneu++; });
+  var weekCnt = items.filter(function(it){return isFresh(it.date);}).length;
+  var sub = document.getElementById("sub");
+  if (sub) sub.textContent = COMPANIES.length + " 家监控公司 · 最近 " + (DATA.windowDays||30) + " 天舆情 · 更新于 " + (DATA.generatedAt||"—");
+  var tags = document.getElementById("heroTags");
+  if (tags) tags.innerHTML = '<span class="tag">正面 '+gpos+'</span><span class="tag">负面 '+gneg+'</span><span class="tag">中性 '+gneu+'</span>'
+    + '<span class="tag">🔥 近一周 '+weekCnt+'</span><span class="tag">有舆情公司 '+Object.keys(cos).length+'</span>';
+
+  var sfx = filtering ? " · 筛选后口径" : "";
+  var kvRow = document.getElementById("kvRow");
+  if (kvRow) kvRow.innerHTML = kv("舆情总数", shown.length, "", "最近 "+(DATA.windowDays||30)+" 天"+sfx)
+    + kv("正面", pos, "pos", "订单/新品/合作/融资"+sfx)
+    + kv("负面", neg, "neg", "诉讼/亏损/召回/裁减"+sfx)
+    + kv("中性", neu, "", "常规动态"+sfx)
+    + kv("覆盖公司", Object.keys(cos).length, "", "无舆情公司不列入"+sfx);
+
+  var list = document.getElementById("newsList");
+  if (!list) return;
   if (!shown.length) { list.innerHTML = '<div class="empty">该筛选条件下暂无舆情</div>'; return; }
   list.innerHTML = shown.map(function(it){
     var url = String(it.url||"#");
     var fresh = isFresh(it.date);
     return '<div class="news'+(fresh?' fresh':'')+'"><div class="h"><span class="co-tag">'+esc(it.company)+'</span>'
     + '<a href="'+esc(url)+'" target="_blank" rel="noopener">'+esc(it.title)+'</a>'
-    + (fresh?'<span class="b b-week">本周</span>':'')
+    + (fresh?'<span class="b b-week">近7天</span>':'')
     + '<span class="b '+sentClass(it.sentiment)+'">'+sentLabel(it.sentiment)+'</span></div>'
     + '<dl><dt>摘要</dt><dd>'+esc(it.summary)+'</dd>'
     + '<dt>判断理由</dt><dd>'+esc(it.reason)+'</dd>'
