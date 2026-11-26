@@ -1,73 +1,103 @@
 {
- "generatedAt": "2026-11-22T08:17:30+08:00",
+ "generatedAt": "2026-11-26T13:28:24+08:00",
  "windowDays": 30,
  "items": [
   {
-   "company": "Telsonic",
-   "title": "塑料焊接设备市场预计到2035年将持续增长，受轻量化汽车和基础设施管道需求推动",
-   "summary": "行业报告预测塑料焊接设备市场到2035年将保持增长，主要驱动力来自轻量化汽车制造和基础设施管道需求。Telsonic作为超声波焊接设备厂商，处于该市场的相关细分领域。",
+   "company": "Cedrat Technologies",
+   "title": "机器人与自动化执行器市场规模、趋势及2036年预测",
+   "summary": "该报道聚焦机器人与自动化执行器市场的规模与趋势预测，Cedrat Technologies作为压电执行器厂商属于该市场参与者。",
+   "sentiment": "neutral",
+   "reason": "行业市场预测报道，未涉及公司具体经营事件。",
+   "source": "Global Growth Insights",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdVBtNkF3WEJhcjFQUEpvQXY5RHotdDk2NTB2TllBWVVzN3ZmVF9BZzNxcUZrTW4zTTB2bU1kUGR6MHZCUnZYMlFOTlJObjliYUc3ZjdNRGN5N1VEN1o2ZjZQNXQzWjIweTJ1eUxCaWk4U01zMjhOQUNKOGE1RGxJeW9rX0Q2SUFTQWd2N0lsTV9XS2VfZ0duemNoRnB1N0Zi?oc=5",
+   "date": "2026-11-25"
+  },
+  {
+   "company": "SONOTEC",
+   "title": "Setauket的Christopher Portelli解释欧洲公司美国子公司为何须自立门户",
+   "summary": "文章讨论欧洲企业美国子公司如何建立自身授权与独立性，SONOTEC作为欧洲超声波厂商的美国子公司或为案例之一。",
+   "sentiment": "neutral",
+   "reason": "管理话题讨论，无明确利好或利空指向。",
+   "source": "World Business Outlook",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQa1o3dHlfeHFfMkNKMXZvbW9OeEVJRF96TlRUbDNkTmU1aGtpaVpLXzk2blVlQ0N2akd2aTkzNkZhMmM4S1FFU0hZVTJuVjFDN0JMRGpERXBPa2Exb3RzcGNHS0xPeFBDZ1VZNGdZb3pVM3FmOGh5eUNWTksyV2RkcDFvc2pCcEN2bkFXUE9ZdTUxX29vem5RTkh1ZkU0N0pqQ1R3VklBakFFLV9JVDVhY1BqNVluSGJjQ1AyNW1BYVdNc0NBNnRWQllhYjNhTm9LMHMyQktNZk1tdw?oc=5",
+   "date": "2026-11-25"
+  },
+  {
+   "company": "Crest Ultrasonics",
+   "title": "超声波清洗市场即将爆发",
+   "summary": "报道称超声波清洗市场将迎来增长，Crest Ultrasonics作为该领域厂商被列入相关企业。",
    "sentiment": "positive",
-   "reason": "市场前景向好，利好其所在细分行业。",
-   "source": "IndexBox",
-   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOMWVOdFQtYXlBbkJuamhxbFNFanRrc0ZaaXd1ZEpvX0VrOEhYak8xcWJIWHlrZzMxZl8wS3FXX0F1SFB1SDRibEl3MWVRNTZ5V1cwVUFXQnNXME9UNGpsTEQ4dWlxTGkzSFlPbUVzS25pQWNCR0VGYWZ3eWZ0RXZLR0ZZblQtOFhlaEViZmRYcnhYWXc5MEpFS1V5ZUZvcHpNZXMxMVR1cmdjZXpKNnVROXdUMlZUVEJ0UFliV3pUeHhtc3ZHa3lSNGhGQlFhazEzY2Z5UjM4MlZPUms?oc=5",
-   "date": "2026-11-14"
+   "reason": "行业景气向好，利好相关厂商。",
+   "source": "openPR.com",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZHBaYm9xTllVUHlEa2tKdUNIaVBINlRwR2k4eUVlSEJvdHdPM2FSZU1Pb1BVcjEtNUxraE1qRXExeWV3eTZjTHB3RG8zN1F5cC1nd1ZPTktfdGlpakdER29CTjFqMmg2ZjJlS3ZWYWZxc01Qa1hoOUVoa1VCYXdvTVVlVjh1cjVzS3NnUDB2RzA?oc=5",
+   "date": "2026-11-23"
+  },
+  {
+   "company": "Sono-Tek",
+   "title": "Sono-Tek Corp 提交DEF 14A委托书",
+   "summary": "Sono-Tek向监管机构提交股东年会相关的委托书文件，属于常规公司治理披露。",
+   "sentiment": "neutral",
+   "reason": "例行合规披露，无情绪倾向。",
+   "source": "Investing.com UK",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQSnI3SUpobEZIRFloLXhsRDIxemp1ZjdkNEVoWHdNOUNIcThucnZHejR1ZjJuN19UTFF5T291aGdkWXVoUW4yVUhRWVBKUmVBbjd2Wmt4SGQ2eWIzdEJwVF9XeFg0ckVIQXU1ZVZ1ZnViZ2lYVkQ4UVh6blprTHdsVDJHeVZZYnhHaDRxaTMzTGktVzVHZlVkWmtjVEJkYlRfWHpGZA?oc=5",
+   "date": "2026-11-18"
+  },
+  {
+   "company": "Sono-Tek",
+   "title": "2026年五大超声波喷涂设备公司",
+   "summary": "报道盘点2026年领先的超声波喷涂设备企业，Sono-Tek作为该细分领域厂商入选。",
+   "sentiment": "positive",
+   "reason": "被列为行业领先企业，属正面曝光。",
+   "source": "The Herald-Mail",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNXZhemRuTjZCb2xzbjRyaENvQlY5Z0NkUlB4V3RweXFwVnQ1Nnh0eS1KMndFdkdWWW9ZRXBDMGJ5UUtSTW5HZlp0Y3dmT2ExcHFrVE9QUGdONy1jMm4xS2xVSUQ4STVWYXFfSzNqRVdsZ2FITmVUVWtlMTgzdVkxWG5UcGROcTB5d1BZXzY2ZmxHWjRVWldyWktjWXI3LXJvbkNSMFlJVHFvYXRTajl4TmpTc0NNbXo3dFE?oc=5",
+   "date": "2026-11-15"
+  },
+  {
+   "company": "Sono-Tek",
+   "title": "Sono-Tek 2026年员工人数与编制数据",
+   "summary": "第三方数据平台披露Sono-Tek的员工数量与人员编制信息。",
+   "sentiment": "neutral",
+   "reason": "中性数据类信息，无明确情绪指向。",
+   "source": "Revelio Labs",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0zLU1HakhaMjNyTnNvRUZwajBCTzUyNmhrMEhEaFZaLWg2Nll6amZjYk1MallHV3RKcWJTS0RCZXhGcEticS0ycEhvWmo1Z1FLYTlMeGFhTGhLWGVqV0NmZ3YxQUJqTDQ?oc=5",
+   "date": "2026-11-13"
   },
   {
    "company": "Piezo Technologies",
    "title": "压电技术用于晶圆几何形状的主动控制",
-   "summary": "报道介绍利用压电技术对晶圆几何形状进行主动控制的方法。Piezo Technologies作为压电材料与器件厂商，与该技术应用领域直接相关。",
-   "sentiment": "neutral",
-   "reason": "属于技术应用报道，未涉及公司具体业绩或订单。",
+   "summary": "报道介绍利用压电技术对晶圆几何形貌进行主动控制，Piezo Technologies为压电材料相关厂商。",
+   "sentiment": "positive",
+   "reason": "展示压电技术新应用，利好相关厂商。",
    "source": "Design World",
    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQc09YZTk2Z1NnU294SWg3bE5Vb2kyeDUtX2tKeUliVmw3VjhyNUZqR1FMcTZ4Q1E5ZnZPLXBiMDhULUxTSWQ5U2ZHVGxBQ0xlbjBIMllHLWZBVzdOUHFGRDRsUFhhTXZud1pHN3g5Y19oUGU5RmMxT3p0Y05yWjZkclhnSnIzUE1ES0d4eXpvV0dhZw?oc=5",
    "date": "2026-11-11"
   },
   {
-   "company": "Flosonics Medical",
-   "title": "FloSonics Medical获iGan领投的500万美元种子轮融资",
-   "summary": "FloSonics Medical获得由iGan领投的500万美元种子轮融资。该公司从事超声医疗设备研发，属于超声波设备领域。",
+   "company": "Söring",
+   "title": "超声波手术刀市场展望：行业机遇与增长趋势分析",
+   "summary": "报道分析超声波手术刀市场的机遇与增长趋势，Söring作为该领域厂商属于相关参与者。",
    "sentiment": "positive",
-   "reason": "获得融资属于正面资本事件。",
-   "source": "PEI Private Equity",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSDdpMEVBUFRzbTEtODZiaVpNTVlYQXdpT2h2RFFGN1dvT0pZd3hNbWloUXhhV0xGZkxQbDJuWXEwRmxKcy1DQmhDQUl6dTBaR0wzN2w2X0VfYi0zR21xZ1FGRkE0LTB5Yjc1Q29MNDNoUERabEZteGhZSk42V3c4dU95T0hMcWdZS0R4ZnBuR3ViQQ?oc=5",
-   "date": "2026-11-08"
-  },
-  {
-   "company": "EDAP-Focal One",
-   "title": "EDAP TMS 2026年第三季度财报电话会议记录",
-   "summary": "EDAP TMS召开2026年第三季度财报电话会议，讨论季度经营与财务情况。该公司为Focal One超声治疗设备厂商。",
-   "sentiment": "neutral",
-   "reason": "财报电话会议记录本身为中性信息。",
-   "source": "Benzinga",
-   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNd2pUU3lrN0R4a0d5eFhtZHBmVVNJTGw4ZEdsQ3FVVWRuMFZ2Y0VpYlZJSmJmX3R6X1JJVlJGcHFOR2d5NzY0TG12dXVEXzBRdXlwZmpfV28zejRDNW11aDlXS2ZZMXRfRjNidmZKcm5XekhOV01tdDlkdWxpRV9oaUp6Q0NUeHl2Nng1dXl3RQ?oc=5",
-   "date": "2026-11-05"
-  },
-  {
-   "company": "EDAP-Focal One",
-   "title": "EDAP TMS营收增长26%，第三季度净亏损收窄",
-   "summary": "EDAP TMS第三季度营收同比增长26%，同时净亏损有所收窄。业绩呈现收入增长与亏损改善并存的态势。",
-   "sentiment": "positive",
-   "reason": "营收增长且亏损收窄，整体业绩改善。",
-   "source": "TradingView",
-   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRUl5T19LMl9SVjU5bHVyYXNWZkNuLXRqbGlsaTdiNWJhdEpKUERmRkV0dlctY0RWcXRoMGFWLXBoaXpYTTNfaU1wQ1FuZWlDbjJCeFRUZ052RlhzXzJRb2ZVWmZYeDFXNjA3djlzNngtb0NpTllSekYwXzdOYjB6cDlaRkdBMWhEVmJrTGM5YXpvcWdnQmI3dnJIMUVTTEhrYUo5RGg0OHpqV0pJUnl4dE5CLUxLSGhvQWF3RHpDMjZjQVN0clB0eTVR?oc=5",
-   "date": "2026-11-05"
+   "reason": "市场增长前景向好，利好相关企业。",
+   "source": "openPR.com",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQUJ5dksxYUV2U01MNi0zT0FMSURLOWtyWlM3YkF6ckNYUmpkQWF4NXdBSU8yUlhwc2xzdEl5Q1RRWjBtazVUVGp0NFNFdVIwOFlQZWV0NmFkcElQWE1ibHhVQ3dIUTdydVpnamJ3SjZkMTctUmt3M05wUU1tcDRFMlN4UmZDeHplOG90cm1DY3U?oc=5",
+   "date": "2026-11-09"
   },
   {
    "company": "Piezo Technologies",
-   "title": "压电技术实现对晶圆几何形状的主动控制",
-   "summary": "报道介绍压电技术可用于对晶圆几何形状进行主动控制。Piezo Technologies作为压电材料与器件厂商，与该技术方向相关。",
-   "sentiment": "neutral",
-   "reason": "技术类报道，未涉及公司经营数据。",
+   "title": "压电技术实现晶圆几何形状的主动控制",
+   "summary": "报道介绍压电技术在晶圆几何形貌主动控制中的应用，涉及压电材料厂商Piezo Technologies。",
+   "sentiment": "positive",
+   "reason": "新技术应用拓展，正面行业信息。",
    "source": "Nanowerk",
    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9za2Z1MjdLaHBnbDJzRXZGWWEtNE54alUxN2lCM1FFRXBnTDF1dWE5czI5VldIMDRxYTRzUXZ1S2Y0NWppYXpWVk1xb016S3N2WEpTM3BNeVUtSkEwUWlXSl9lTUpVcXNMYl9yM0l0Zw?oc=5",
    "date": "2026-11-04"
   },
   {
    "company": "Cedrat Technologies",
-   "title": "压电执行器市场规模、行业份额及到2034年预测",
-   "summary": "市场研究报告给出压电执行器市场规模、行业份额及到2034年的预测。Cedrat Technologies作为压电执行器厂商，处于该市场之中。",
+   "title": "压电执行器市场规模、行业份额及2034年预测",
+   "summary": "报道预测压电执行器市场规模与份额，Cedrat Technologies作为压电执行器厂商属于相关企业。",
    "sentiment": "neutral",
-   "reason": "行业市场报告，未直接涉及公司具体表现。",
+   "reason": "行业市场预测，未涉及公司具体事件。",
    "source": "Fortune Business Insights",
    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcWo1WmxlT2Y0c1g3eVU1TWo1NXFXWk4yLTZ0blJRdnkxLU1OUk83a0Z6V2U5eWJBRkR6aXAyQUpkT0JzTUk5OG1JNWZGTEpPRW5Sa3I1LVMzNk5RbUk5b09HTFBYWjdEaHI5U3Zuc1ZvVWRrR3M5bTI3UEgwWWNYUXJhYw?oc=5",
    "date": "2026-11-02"
@@ -75,9 +105,9 @@
   {
    "company": "Dukane",
    "title": "Stellex支持的Crest收购制造商Dukane",
-   "summary": "由Stellex支持的Crest收购了制造商Dukane。Dukane为超声波焊接设备厂商，此次交易中被收购方可能面临整合不确定性。",
+   "summary": "报道称由Stellex支持的Crest收购了制造商Dukane，Dukane在此交易中为被收购方。",
    "sentiment": "neutral",
-   "reason": "收购事件对Dukane影响方向不明，暂判中性。",
+   "reason": "并购事件，被收购方情绪中性偏不确定。",
    "source": "PEI Private Equity",
    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPblBkR0xhZnhIMmV5bHQ5b0plN1o1WmdtZEJKY013cHJ2aHdWdUtRR0FMZzh1eTBaU0oyd3o4NmVsRWJSUXhvbVNEN3VKdTZJQ09QM2ZFU285Z2FZLXFfSHNPWWRxWmRuYU4xbVR1RGNxOGJOcHh6eUxJMEpWdThCbXBFSWktSXY3LXJBQW0tbDNmTlBRUElPVjBR?oc=5",
    "date": "2026-10-29"
