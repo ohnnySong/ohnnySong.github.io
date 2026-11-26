@@ -62,7 +62,7 @@ MAX_TOTAL_TO_LLM = 60
 MAX_FINAL = 40
 MAX_PENDING = 30
 FETCH_WORKERS = 8
-FETCH_BUDGET_SEC = 300
+FETCH_BUDGET_SEC = 240
 PER_REQ_TIMEOUT = 25
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
@@ -236,10 +236,10 @@ def discover_new_companies(api_key, base_url, model, existing_names):
     for obj in data.get("items", []):
         if not isinstance(obj, dict) or not obj.get("name"):
             continue
-        try:
-            it = raw[int(obj.get("i", -1))]
-        except Exception:
+        idx = obj.get("i")
+        if not isinstance(idx, (int, float)) or not (0 <= int(idx) < len(raw)):
             continue
+        it = raw[int(idx)]
         out.append({
             "name": str(obj["name"]).strip(),
             "country": str(obj.get("country") or "").strip(),

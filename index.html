@@ -368,7 +368,7 @@ function renderPending(){
   var pill = document.getElementById("pendPill");
   if(pill){ pill.style.display = items.length?"":"none"; pill.textContent = items.length; }
   if(!block) return;
-  if(!items.length){ block.style.display="none"; return; }
+  if(!items.length){ block.style.display="none"; document.getElementById("pendList").innerHTML=""; return; }
   block.style.display = "";
   document.getElementById("pendList").innerHTML = items.map(function(p,i){
     return '<div class="pend-item"><span class="nm">'+esc(p.name)+'</span>'
@@ -503,13 +503,25 @@ function importFile(file){
 }
 function loadXLSX(cb){
   if(window.XLSX) return cb(true);
-  var s = document.createElement("script");
-  var ok = false;
-  s.onload = function(){ ok=true; cb(true); };
-  s.onerror = function(){ cb(false); };
-  setTimeout(function(){ if(!ok && !window.XLSX){} }, 8000);
-  s.src = "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js";
-  document.head.appendChild(s);
+  var CDNS = [
+    "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js",
+    "https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js",
+    "https://cdn.staticfile.org/xlsx/0.18.5/xlsx.full.min.js",
+    "https://lib.baomitu.com/xlsx/0.18.5/xlsx.full.min.js"
+  ];
+  var i = 0;
+  function tryNext(){
+    if(window.XLSX) return cb(true);
+    if(i >= CDNS.length) return cb(false);
+    var s = document.createElement("script");
+    var settled = false;
+    var tm = setTimeout(function(){ if(!settled){ settled=true; s.remove(); tryNext(); } }, 8000);
+    s.onload = function(){ if(!settled){ settled=true; clearTimeout(tm); cb(true); } };
+    s.onerror = function(){ if(!settled){ settled=true; clearTimeout(tm); s.remove(); tryNext(); } };
+    s.src = CDNS[i++];
+    document.head.appendChild(s);
+  }
+  tryNext();
 }
 
 /* ---------- 模板 / 导出 ---------- */
