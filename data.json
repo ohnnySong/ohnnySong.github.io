@@ -1,23 +1,23 @@
 {
- "generatedAt": "2026-11-26T13:50:27+08:00",
+ "generatedAt": "2026-11-26T13:54:30+08:00",
  "windowDays": 30,
  "items": [
   {
-   "company": "EDAP-Focal One",
-   "title": "Guy Levy 在 EDAP TMS 股价回落35%后出售1200万美元股票",
-   "summary": "EDAP TMS 高管 Guy Levy 在股价下跌35%后出售了价值约1200万美元的公司股票。此举可能引发市场对管理层信心及股价走势的担忧。",
-   "sentiment": "negative",
-   "reason": "内部人减持通常被视为对股价不利的信号。",
-   "source": "Benzinga",
-   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQTmw3SG1ZcGlxVEM0SGkzN2txeXE2d1oycnRHVl90T0kxcURwbUFSamtFQ19Hdkt2X0tsNUZmVEl6ZXRITWtSRWFIeHNtclJ5a2hmTVJWcG5rTmpLQ280a0FJNFJOcXd1Ql9RMGlmVmxwNm1EOUdyTjdjTEVsLTM5eTdfQmUxVjVaaGxSaFF2SWMwS1FTaTRyb0ZvSjlONTdqdVJnam9fQnItaGhPYTd5d2hxanUtZ0FSLTRyQ05VMmtXc0E2OUE?oc=5",
-   "date": "2026-11-24"
+   "company": "SONOTEC",
+   "title": "Setauket的Christopher Portelli解释为何一家欧洲公司的美国子公司必须赢得自己的授权",
+   "summary": "Christopher Portelli以某欧洲公司美国子公司为例，阐述海外子公司需在当地建立独立授权与自主运营能力。文章涉及SONOTEC的美国子公司治理话题。",
+   "sentiment": "neutral",
+   "reason": "属于管理经验分享，未涉及具体业绩或事件倾向。",
+   "source": "World Business Outlook",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQa1o3dHlfeHFfMkNKMXZvbW9OeEVJRF96TlRUbDNkTmU1aGtpaVpLXzk2blVlQ0N2akd2aTkzNkZhMmM4S1FFU0hZVTJuVjFDN0JMRGpERXBPa2Exb3RzcGNHS0xPeFBDZ1VZNGdZb3pVM3FmOGh5eUNWTksyV2RkcDFvc2pCcEN2bkFXUE9ZdTUxX29vem5RTkh1ZkU0N0pqQ1R3VklBakFFLV9JVDVhY1BqNVluSGJjQ1AyNW1BYVdNc0NBNnRWQllhYjNhTm9LMHMyQktNZk1tdw?oc=5",
+   "date": "2026-11-25"
   },
   {
    "company": "Crest Ultrasonics",
-   "title": "超声波清洗市场将迎来爆发 | Branson 等企业受关注",
-   "summary": "市场报告指出超声波清洗市场前景向好，Branson 等主要厂商被列为受益者。Crest Ultrasonics 作为行业参与者出现在相关市场报道中。",
+   "title": "超声波清洗市场即将迎来爆发 | Branson等厂商受关注",
+   "summary": "市场报告指出超声波清洗市场将快速增长，Branson等主要厂商被列为关注对象。Crest Ultrasonics作为行业参与者出现在相关市场报道中。",
    "sentiment": "positive",
-   "reason": "行业市场被看好，利好相关厂商。",
+   "reason": "行业市场向好，利好相关厂商。",
    "source": "openPR.com",
    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZHBaYm9xTllVUHlEa2tKdUNIaVBINlRwR2k4eUVlSEJvdHdPM2FSZU1Pb1BVcjEtNUxraE1qRXExeWV3eTZjTHB3RG8zN1F5cC1nd1ZPTktfdGlpakdER29CTjFqMmg2ZjJlS3ZWYWZxc01Qa1hoOUVoa1VCYXdvTVVlVjh1cjVzS3NnUDB2RzA?oc=5",
    "date": "2026-11-23"
@@ -25,19 +25,19 @@
   {
    "company": "Sono-Tek",
    "title": "2026年五大超声波喷涂设备公司盘点",
-   "summary": "报道盘点了2026年领先的超声波喷涂设备企业，Sono-Tek 位列其中。这体现了公司在细分领域的行业地位获得认可。",
+   "summary": "报道评选2026年超声波喷涂设备领域的领先企业，Sono-Tek被列入其中。榜单反映该公司在细分设备市场的地位。",
    "sentiment": "positive",
-   "reason": "入选行业榜单提升公司曝光度与声誉。",
+   "reason": "入选行业领先榜单，属正面曝光。",
    "source": "The Herald-Mail",
    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNXZhemRuTjZCb2xzbjRyaENvQlY5Z0NkUlB4V3RweXFwVnQ1Nnh0eS1KMndFdkdWWW9ZRXBDMGJ5UUtSTW5HZlp0Y3dmT2ExcHFrVE9QUGdONy1jMm4xS2xVSUQ4STVWYXFfSzNqRVdsZ2FITmVUVWtlMTgzdVkxWG5UcGROcTB5d1BZXzY2ZmxHWjRVWldyWktjWXI3LXJvbkNSMFlJVHFvYXRTajl4TmpTc0NNbXo3dFE?oc=5",
    "date": "2026-11-15"
   },
   {
    "company": "Sono-Tek",
-   "title": "Livermore 实验室研究协议能否助力打造 Petaluma“钻石谷”？",
-   "summary": "报道探讨 Livermore 国家实验室的研究合作能否推动 Petaluma 地区产业发展，Sono-Tek 作为当地相关企业被提及。",
+   "title": "Livermore实验室研究协议能否助力Petaluma成为“钻石谷”？",
+   "summary": "报道讨论Livermore国家实验室的研究合作能否带动Petaluma地区产业发展。文中提及总部位于当地的Sono-Tek，作为区域产业生态的一部分。",
    "sentiment": "neutral",
-   "reason": "仅为地区发展报道中的顺带提及，无直接经营信息。",
+   "reason": "区域发展话题，公司仅为顺带提及。",
    "source": "The Press Democrat",
    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVlBzck9LOEN3LWJESTd2eFFFVHZJaUw3V0lad2J2MDZFUW9lbDYtVXozb0V1Mkd5VVQ3aF92aWZWc3BrQzNub05uaDQxdjZWSlVmVmx5TVNHRDhJbXN2cW84VDJ3RzhwT3VEV1FVbXIxYmxPVmZ0S2xWTGs4Z1hWYg?oc=5",
    "date": "2026-11-09"
@@ -45,39 +45,29 @@
   {
    "company": "Söring",
    "title": "超声波手术刀市场展望：行业机遇与增长趋势分析",
-   "summary": "市场报告分析超声波手术刀行业的机遇与增长趋势，Söring 作为该领域厂商被纳入相关市场讨论。",
-   "sentiment": "neutral",
-   "reason": "行业趋势报道，未涉及公司具体业绩。",
+   "summary": "市场分析报告聚焦超声波手术刀行业的机遇与增长趋势。Söring作为该领域厂商出现在相关市场报道中。",
+   "sentiment": "positive",
+   "reason": "行业增长趋势利好相关厂商。",
    "source": "openPR.com",
    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQUJ5dksxYUV2U01MNi0zT0FMSURLOWtyWlM3YkF6ckNYUmpkQWF4NXdBSU8yUlhwc2xzdEl5Q1RRWjBtazVUVGp0NFNFdVIwOFlQZWV0NmFkcElQWE1ibHhVQ3dIUTdydVpnamJ3SjZkMTctUmt3M05wUU1tcDRFMlN4UmZDeHplOG90cm1DY3U?oc=5",
    "date": "2026-11-09"
   },
   {
    "company": "EDAP-Focal One",
-   "title": "EDAP TMS 营收增长26%，第三季度净亏损收窄",
-   "summary": "EDAP TMS 公布第三季度业绩，营收同比增长26%，净亏损有所收窄。业绩改善显示公司经营状况向好。",
-   "sentiment": "positive",
-   "reason": "营收增长且亏损收窄，属业绩利好。",
-   "source": "TradingView",
-   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRUl5T19LMl9SVjU5bHVyYXNWZkNuLXRqbGlsaTdiNWJhdEpKUERmRkV0dlctY0RWcXRoMGFWLXBoaXpYTTNfaU1wQ1FuZWlDbjJCeFRUZ052RlhzXzJRb2ZVWmZYeDFXNjA3djlzNngtb0NpTllSekYwXzdOYjB6cDlaRkdBMWhEVmJrTGM5YXpvcWdnQmI3dnJIMUVTTEhrYUo5RGg0OHpqV0pJUnl4dE5CLUxLSGhvQWF3RHpDMjZjQVN0clB0eTVR?oc=5",
-   "date": "2026-11-05"
-  },
-  {
-   "company": "EDAP-Focal One",
    "title": "EDAP TMS 2026年第三季度财报电话会议记录",
-   "summary": "Benzinga 发布 EDAP TMS 第三季度财报电话会议的文字记录。内容涉及公司季度经营与财务表现。",
+   "summary": "Benzinga发布EDAP TMS 2026年第三季度财报电话会议全文记录，涉及公司Focal One业务所在季度的经营情况。",
    "sentiment": "neutral",
-   "reason": "财报会议记录属中性信息发布。",
+   "reason": "财报记录本身不体现明确情绪倾向。",
    "source": "Benzinga",
    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNd2pUU3lrN0R4a0d5eFhtZHBmVVNJTGw4ZEdsQ3FVVWRuMFZ2Y0VpYlZJSmJmX3R6X1JJVlJGcHFOR2d5NzY0TG12dXVEXzBRdXlwZmpfV28zejRDNW11aDlXS2ZZMXRfRjNidmZKcm5XekhOV01tdDlkdWxpRV9oaUp6Q0NUeHl2Nng1dXl3RQ?oc=5",
    "date": "2026-11-05"
   },
   {
    "company": "Dukane",
-   "title": "Stellex 支持的 Crest 收购制造商 Dukane",
-   "summary": "由 Stellex 支持的 Crest 宣布收购制造商 Dukane。Dukane 在此交易中为被收购方。",
+   "title": "Stellex支持的Crest收购制造商Dukane",
+   "summary": "私募机构Stellex支持的Crest完成对制造商Dukane的收购。Dukane作为被收购方并入Crest旗下。",
    "sentiment": "neutral",
-   "reason": "被收购方情绪中性，交易影响尚不明确。",
+   "reason": "并购事件，Dukane为被收购方，情绪影响中性。",
    "source": "PEI Private Equity",
    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPblBkR0xhZnhIMmV5bHQ5b0plN1o1WmdtZEJKY013cHJ2aHdWdUtRR0FMZzh1eTBaU0oyd3o4NmVsRWJSUXhvbVNEN3VKdTZJQ09QM2ZFU285Z2FZLXFfSHNPWWRxWmRuYU4xbVR1RGNxOGJOcHh6eUxJMEpWdThCbXBFSWktSXY3LXJBQW0tbDNmTlBRUElPVjBR?oc=5",
    "date": "2026-10-29"
